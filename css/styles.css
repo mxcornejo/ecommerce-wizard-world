@@ -1,0 +1,97 @@
+:root {
+  --primary-color: #0d6efd;
+}
+
+/* ===== Hero Section ===== */
+
+.min-vh-20 {
+  min-height: 20vh;
+}
+
+/* ===== Efectos Hover para Cards ===== */
+
+/* Transición suave en el article */
+article.col {
+  transition: all 0.3s ease;
+}
+
+/* Transición en la card */
+article .card {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Transición en la imagen */
+article .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover: zoom en la imagen */
+article.col:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+article.col:hover .card::before {
+  opacity: 1;
+}
+
+/* Z-index para el contenido de la card */
+article .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Efecto hover: cambiar color del título */
+article.col:hover .card-title {
+  color: var(--primary-color) !important;
+}
+
+/* ===== Animación Pulse para Logo ===== */
+.logo-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== Animación Pulse para Descuentos ===== */
+.badge.bg-danger {
+  animation: pulse-discount 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-discount {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 10px 5px rgba(220, 53, 69, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  article .card::before {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  article .card::before {
+    height: 180px;
+  }
+}

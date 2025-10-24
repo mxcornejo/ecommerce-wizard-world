@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Juegos de Estrategia - Tienda de Juegos de Mesa</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../assets/icons/witch-hat.png"
+              alt=""
+              width="30"
+              height="24"
+            />
+            Wizard World
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item active" href="estrategia.html"
+                      >Estrategia</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="familiares.html"
+                      >Familiares</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cartas.html">Cartas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="rol.html">Rol</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero bg-primary text-white py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="display-3 fw-bold mb-4">Juegos de Estrategia</h1>
+              <p class="lead fs-4 mb-4">
+                Desafía tu mente con nuestros mejores juegos de estrategia
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <article class="col">
+            <a href="#" class="text-decoration-none">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
+              >
+                <div class="position-relative">
+                  <img
+                    src="../assets/juegos/catan.jpg"
+                    class="card-img-top"
+                    alt="Catan"
+                    style="height: 300px; object-fit: cover"
+                  />
+                  <span
+                    class="position-absolute top-0 end-0 badge bg-danger m-2"
+                  >
+                    -15%
+                  </span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold text-dark">Catan</h5>
+                  <p class="card-text text-muted">
+                    Un clásico de la estrategia donde construyes asentamientos,
+                    ciudades y caminos mientras comercias recursos con otros
+                    jugadores. Perfecto para 3-4 jugadores.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <span
+                        class="text-decoration-line-through text-muted me-2"
+                      >
+                        $35.990
+                      </span>
+                      <span class="h5 text-primary mb-0">$30.590</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="col">
+            <a href="#" class="text-decoration-none">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
+              >
+                <img
+                  src="../assets/juegos/tickettoride.jpg"
+                  class="card-img-top"
+                  alt="Ticket to Ride"
+                  style="height: 300px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold text-dark">
+                    Ticket to Ride
+                  </h5>
+                  <p class="card-text text-muted">
+                    Viaja a través de América del Norte conectando ciudades
+                    mediante rutas ferroviarias. Estrategia accesible y
+                    divertida para toda la familia.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <span class="h5 text-primary mb-0">$42.990</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="col">
+            <a href="#" class="text-decoration-none">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
+              >
+                <div class="position-relative">
+                  <img
+                    src="../assets/juegos/pandemic.jpg"
+                    class="card-img-top"
+                    alt="Pandemic"
+                    style="height: 300px; object-fit: cover"
+                  />
+                  <span
+                    class="position-absolute top-0 end-0 badge bg-danger m-2"
+                  >
+                    -20%
+                  </span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold text-dark">Pandemic</h5>
+                  <p class="card-text text-muted">
+                    Juego cooperativo donde trabajas en equipo para salvar al
+                    mundo de enfermedades mortales. ¿Podrán encontrar las curas
+                    a tiempo?
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <span
+                        class="text-decoration-line-through text-muted me-2"
+                      >
+                        $38.990
+                      </span>
+                      <span class="h5 text-primary mb-0">$31.190</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-light py-4 mt-5">
+      <div class="container">
+        <p class="text-center mb-0">
+          &copy; 2025 Wizard World. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
