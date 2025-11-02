@@ -12,13 +12,23 @@
 
 /* Transición suave en el article */
 article.col {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover suave: elevación del article */
+article.col:hover {
+  transform: translateY(-8px);
 }
 
 /* Transición en la card */
 article .card {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+}
+
+/* Efecto hover: sombra más pronunciada en la card */
+article.col:hover .card {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Transición en la imagen */
