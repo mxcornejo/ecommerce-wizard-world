@@ -11,6 +11,49 @@ export function esPasswordSegura(password) {
   return regexSegura.test(password);
 }
 
+// Validaciones detalladas de contraseña para mayor seguridad
+export function validarLongitudMinima(password, minimo = 8) {
+  return password.length >= minimo;
+}
+
+export function validarLongitudMaxima(password, maximo = 20) {
+  return password.length <= maximo;
+}
+
+export function contieneCaracteresEspeciales(password) {
+  const regexEspeciales = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+  return regexEspeciales.test(password);
+}
+
+export function contieneMayusculas(password) {
+  return /[A-Z]/.test(password);
+}
+
+export function contieneMinusculas(password) {
+  return /[a-z]/.test(password);
+}
+
+export function contieneNumeros(password) {
+  return /\d/.test(password);
+}
+
+// Validación completa de contraseña con 4 criterios
+export function validarPasswordCompleta(password) {
+  return {
+    longitudMinima: validarLongitudMinima(password, 8),
+    longitudMaxima: validarLongitudMaxima(password, 20),
+    caracteresEspeciales: contieneCaracteresEspeciales(password),
+    mayusculas: contieneMayusculas(password),
+    numeros: contieneNumeros(password),
+    esValida:
+      validarLongitudMinima(password, 8) &&
+      validarLongitudMaxima(password, 20) &&
+      contieneCaracteresEspeciales(password) &&
+      contieneMayusculas(password) &&
+      contieneNumeros(password),
+  };
+}
+
 // Valida que la edad sea mayor o igual a 13 años
 export function esMayorDe13(fechaString) {
   const fecha = new Date(fechaString);

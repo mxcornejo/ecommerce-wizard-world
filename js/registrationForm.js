@@ -6,6 +6,7 @@ import {
   esMayorDe13,
   noEstaVacio,
   sonIguales,
+  validarPasswordCompleta,
 } from "./validators.js";
 
 import {
@@ -23,10 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     if (validarFormulario()) {
-      mostrarMensajeExito("Formulario enviado con éxito 🥳");
-      resetearFormulario(formulario);
+      const usuarioCreado = guardarUsuario();
+      
+      // Iniciar sesión automáticamente
+      iniciarSesionAutomatica(usuarioCreado);
+      
+      mostrarMensajeExito("¡Registro exitoso! Bienvenido a Wizard World 🥳");
+
+      // Redirigir al inicio después de 1.5 segundos
+      setTimeout(() => {
+        window.location.href = "../index.html";
+      }, 1500);
     }
   });
+
+  // Validación en tiempo real de la contraseña
+  const passwordField = obtenerCampo("password");
+  if (passwordField) {
+    passwordField.addEventListener("input", function () {
+      mostrarValidacionPasswordEnTiempoReal(this.value);
+    });
+  }
 });
 
 function validarFormulario() {
@@ -39,6 +57,55 @@ function validarFormulario() {
   esValido &= validarPassword("password", "confirmarPassword");
 
   return Boolean(esValido);
+}
+
+function guardarUsuario() {
+  const usuario = {
+    id: Date.now(),
+    nombre: obtenerCampo("nombre").value.trim(),
+    usuario: obtenerCampo("usuario").value.trim(),
+    email: obtenerCampo("email").value.trim(),
+    fechaNacimiento: obtenerCampo("fechaNacimiento").value,
+    password: obtenerCampo("password").value,
+    comentarios: obtenerCampo("comentarios").value.trim(),
+    fechaRegistro: new Date().toISOString(),
+  };
+
+  // Obtener usuarios existentes o crear array vacío
+  const usuariosRegistrados =
+    JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  // Agregar nuevo usuario
+  usuariosRegistrados.push(usuario);
+
+  // Guardar en localStorage
+  localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+  
+  // Retornar el usuario creado para iniciar sesión
+  return usuario;
+}
+
+function iniciarSesionAutomatica(usuario) {
+  // Crear objeto de sesión
+  const sesionUsuario = {
+    id: usuario.id,
+    nombre: usuario.nombre,
+    usuario: usuario.usuario,
+    email: usuario.email,
+    fechaLogin: new Date().toISOString(),
+    recordarme: false,
+  };
+
+  // Guardar sesión en sessionStorage
+  sessionStorage.setItem("sesionActiva", JSON.stringify(sesionUsuario));
+}
+
+function mostrarValidacionPasswordEnTiempoReal(password) {
+  // Esta función se puede usar si se agregan indicadores visuales en el HTML
+  const validacion = validarPasswordCompleta(password);
+
+  // Aquí puedes agregar código para actualizar indicadores visuales si existen
+  // Por ejemplo, cambiar colores de checkmarks como en recuperarPassword.html
 }
 
 function validarCampoVacio(idCampo) {
@@ -83,7 +150,10 @@ function validarPassword(idPassword, idConfirmar) {
 
   let valido = true;
 
-  if (!esPasswordSegura(pass.value)) {
+  // Usar validación completa con 4 criterios
+  const validacion = validarPasswordCompleta(pass.value);
+
+  if (!validacion.esValida) {
     marcarComoInvalido(pass);
     valido = false;
   } else {
