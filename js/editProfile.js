@@ -102,6 +102,7 @@ function actualizarMenuUsuario() {
           <i class="bi bi-person-circle me-1"></i>${usuarioActual.usuario}
         </button>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+          <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
           <li><a class="dropdown-item" href="editProfile.html"><i class="bi bi-gear me-2"></i>Editar perfil</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item text-danger" href="#" id="menu-cerrar-sesion"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a></li>

@@ -2,41 +2,33 @@
   --primary-color: #0d6efd;
 }
 
-/* ===== Hero Section ===== */
-
+/* Hero Section */
 .min-vh-20 {
   min-height: 20vh;
 }
 
-/* ===== Efectos Hover para Cards ===== */
-
-/* Transición suave en el article */
+/* Efectos Hover para Cards */
 article.col {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto hover suave: elevación del article */
 article.col:hover {
   transform: translateY(-8px);
 }
 
-/* Transición en la card */
 article .card {
   transition: all 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
-/* Efecto hover: sombra más pronunciada en la card */
 article.col:hover .card {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Transición en la imagen */
 article .card-img-top {
   transition: transform 0.3s ease;
 }
 
-/* Efecto hover: zoom en la imagen */
 article.col:hover .card-img-top {
   transform: scale(1.05);
 }
@@ -45,18 +37,16 @@ article.col:hover .card::before {
   opacity: 1;
 }
 
-/* Z-index para el contenido de la card */
 article .card-body {
   position: relative;
   z-index: 2;
 }
 
-/* Efecto hover: cambiar color del título */
 article.col:hover .card-title {
   color: var(--primary-color) !important;
 }
 
-/* ===== Animación Pulse para Logo ===== */
+/* Animaciones */
 .logo-pulse {
   animation: pulse 2s ease-in-out infinite;
 }
@@ -73,7 +63,6 @@ article.col:hover .card-title {
   }
 }
 
-/* ===== Animación Pulse para Descuentos ===== */
 .badge.bg-danger {
   animation: pulse-discount 1.5s ease-in-out infinite;
 }
@@ -93,15 +82,72 @@ article.col:hover .card-title {
   }
 }
 
-/* ===== Responsive Design ===== */
+/* Página de Perfil */
+.profile-page #card-perfil {
+  min-height: 60vh;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+#card-perfil .card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.profile-page #card-perfil .card {
+  margin: auto;
+}
+
+#card-perfil .card-header {
+  border-radius: 15px 15px 0 0 !important;
+  padding: 1.5rem;
+}
+
+#card-perfil .card-body {
+  padding: 2rem;
+}
+
+.profile-page #card-perfil .row.g-3 > div {
+  padding: 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-page #card-perfil .row.g-3 > div:hover {
+  background-color: #f8f9fa;
+}
+
+.profile-page #card-perfil .bi {
+  transition: transform 0.3s ease;
+}
+
+.profile-page #card-perfil .row.g-3 > div:hover .bi {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   article .card::before {
     height: 200px;
+  }
+
+  #card-perfil .card-body {
+    padding: 1.5rem;
   }
 }
 
 @media (max-width: 576px) {
   article .card::before {
     height: 180px;
+  }
+
+  #card-perfil .card-body {
+    padding: 1rem;
+  }
+
+  #card-perfil .display-1 {
+    font-size: 4rem;
   }
 }
