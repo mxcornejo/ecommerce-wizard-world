@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderProduct(product);
   setupEventListeners();
+  updateCartBadge();
 });
 
 function renderProduct(product) {
@@ -114,6 +115,7 @@ function setupEventListeners() {
     if (product) {
       addToCart(product, quantity);
       showAddToCartNotification(product.name, quantity);
+      updateCartBadge();
     }
   });
 
@@ -213,6 +215,19 @@ function showWishlistNotification(productName) {
   setTimeout(() => {
     toastContainer.remove();
   }, 3000);
+}
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const badge = document.getElementById("cart-badge");
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  if (totalItems > 0) {
+    badge.textContent = totalItems;
+    badge.style.display = "inline-block";
+  } else {
+    badge.style.display = "none";
+  }
 }
 
 function showError() {

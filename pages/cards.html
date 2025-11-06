@@ -11,6 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico" />
   </head>
@@ -87,6 +88,12 @@
                 Buscar
               </button>
             </form>
+            <a href="cart.html" class="btn btn-outline-primary ms-2 position-relative">
+              <i class="bi bi-cart3"></i>
+              <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">
+                0
+              </span>
+            </a>
             <a href="signIn.html" class="btn btn-primary ms-2"
               >Iniciar sesión</a
             >
@@ -228,5 +235,16 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const badge = document.getElementById('cart-badge');
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        if (totalItems > 0) {
+          badge.textContent = totalItems;
+          badge.style.display = 'inline-block';
+        }
+      });
+    </script>
   </body>
 </html>
