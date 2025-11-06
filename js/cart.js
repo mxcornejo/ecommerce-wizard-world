@@ -183,5 +183,5 @@ function showNotification(message, type = "success") {
 }
 
 document.getElementById("checkout-btn")?.addEventListener("click", function () {
-  alert("Funcionalidad de pago en desarrollo. ¡Gracias por tu compra!");
+  window.location.href = "checkout.html";
 });

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pago - Wizard World</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico" />
+  </head>
+  <body class="pt-5">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="../assets/icons/witch-hat.png"
+              alt=""
+              width="30"
+              height="24"
+            />
+            Wizard World
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="strategy.html">Estrategia</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="family.html">Familiares</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cards.html">Cartas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="roleplay.html">Rol</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-primary" type="submit">
+                Buscar
+              </button>
+            </form>
+            <a
+              href="cart.html"
+              class="btn btn-outline-primary ms-2 position-relative"
+            >
+              <i class="bi bi-cart3"></i>
+              <span
+                id="cart-badge"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                style="display: none"
+              >
+                0
+              </span>
+            </a>
+            <a href="signIn.html" class="btn btn-primary ms-2"
+              >Iniciar sesión</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container my-5">
+        <!-- Progress Steps -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="d-flex align-items-center">
+                <div
+                  class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span class="ms-2 me-3 fw-semibold">Carrito</span>
+              </div>
+              <div class="border-top" style="width: 50px"></div>
+              <div class="d-flex align-items-center">
+                <div
+                  class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  2
+                </div>
+                <span class="ms-2 me-3 fw-semibold">Pago</span>
+              </div>
+              <div class="border-top" style="width: 50px"></div>
+              <div class="d-flex align-items-center">
+                <div
+                  class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  3
+                </div>
+                <span class="ms-2 fw-semibold text-muted">Confirmación</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <h1 class="display-5 fw-bold mb-4">
+              <i class="bi bi-credit-card me-2"></i>Información de Pago
+            </h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Formulario de Pago -->
+          <div class="col-lg-7 mb-4">
+            <form id="checkout-form" novalidate>
+              <!-- Información de Envío -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold mb-4">
+                    <i class="bi bi-geo-alt me-2"></i>Información de Envío
+                  </h5>
+
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="firstName" class="form-label"
+                        >Nombre <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tu nombre.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="lastName" class="form-label"
+                        >Apellido <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tu apellido.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="email" class="form-label"
+                        >Email <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="correo@ejemplo.com"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa un email válido.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="phone" class="form-label"
+                        >Teléfono <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        placeholder="+56 9 1234 5678"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tu teléfono.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="address" class="form-label"
+                        >Dirección <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="address"
+                        placeholder="Calle Principal 123"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tu dirección.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="city" class="form-label"
+                        >Ciudad <span class="text-danger">*</span></label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor ingresa tu ciudad.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="region" class="form-label"
+                        >Región <span class="text-danger">*</span></label
+                      >
+                      <select class="form-select" id="region" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="RM">Región Metropolitana</option>
+                        <option value="V">Valparaíso</option>
+                        <option value="VIII">Biobío</option>
+                        <option value="X">Los Lagos</option>
+                        <option value="Otras">Otra región</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Por favor selecciona tu región.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="postalCode" class="form-label"
+                        >Código Postal</label
+                      >
+                      <input type="text" class="form-control" id="postalCode" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Método de Pago -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold mb-4">
+                    <i class="bi bi-wallet2 me-2"></i>Método de Pago
+                  </h5>
+
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <div
+                        class="btn-group w-100"
+                        role="group"
+                        aria-label="Método de pago"
+                      >
+                        <input
+                          type="radio"
+                          class="btn-check"
+                          name="paymentMethod"
+                          id="creditCard"
+                          value="credit"
+                          checked
+                        />
+                        <label class="btn btn-outline-primary" for="creditCard">
+                          <i class="bi bi-credit-card-2-front me-2"></i>Tarjeta
+                          de Crédito/Débito
+                        </label>
+
+                        <input
+                          type="radio"
+                          class="btn-check"
+                          name="paymentMethod"
+                          id="paypal"
+                          value="paypal"
+                        />
+                        <label class="btn btn-outline-primary" for="paypal">
+                          <i class="bi bi-paypal me-2"></i>PayPal
+                        </label>
+
+                        <input
+                          type="radio"
+                          class="btn-check"
+                          name="paymentMethod"
+                          id="transfer"
+                          value="transfer"
+                        />
+                        <label class="btn btn-outline-primary" for="transfer">
+                          <i class="bi bi-bank me-2"></i>Transferencia
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tarjeta de Crédito/Débito -->
+                  <div id="card-payment-section">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cardNumber" class="form-label"
+                          >Número de Tarjeta
+                          <span class="text-danger">*</span></label
+                        >
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="cardNumber"
+                            placeholder="1234 5678 9012 3456"
+                            maxlength="19"
+                            required
+                          />
+                          <span class="input-group-text">
+                            <i class="bi bi-credit-card"></i>
+                          </span>
+                        </div>
+                        <div class="invalid-feedback">
+                          Por favor ingresa un número de tarjeta válido.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="cardName" class="form-label"
+                          >Nombre en la Tarjeta
+                          <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cardName"
+                          placeholder="NOMBRE APELLIDO"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Por favor ingresa el nombre como aparece en la
+                          tarjeta.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="expiryDate" class="form-label"
+                          >Fecha de Expiración
+                          <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="expiryDate"
+                          placeholder="MM/AA"
+                          maxlength="5"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Por favor ingresa la fecha de expiración.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cvv" class="form-label"
+                          >CVV <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cvv"
+                          placeholder="123"
+                          maxlength="4"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Por favor ingresa el código CVV.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- PayPal -->
+                  <div id="paypal-payment-section" style="display: none">
+                    <div class="alert alert-info">
+                      <i class="bi bi-info-circle me-2"></i>
+                      Serás redirigido a PayPal para completar tu pago de forma
+                      segura.
+                    </div>
+                  </div>
+
+                  <!-- Transferencia Bancaria -->
+                  <div id="transfer-payment-section" style="display: none">
+                    <div class="alert alert-info">
+                      <i class="bi bi-info-circle me-2"></i>
+                      <strong>Datos para transferencia:</strong><br />
+                      Banco: Banco Estado<br />
+                      Cuenta Corriente: 123456789<br />
+                      RUT: 12.345.678-9<br />
+                      Email: pagos@wizardworld.cl
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Notas del Pedido -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold mb-3">
+                    <i class="bi bi-chat-left-text me-2"></i>Notas del Pedido
+                    (Opcional)
+                  </h5>
+                  <textarea
+                    class="form-control"
+                    id="orderNotes"
+                    rows="3"
+                    placeholder="Instrucciones especiales de entrega, comentarios, etc."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Términos y Condiciones -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="termsCheck"
+                      required
+                    />
+                    <label class="form-check-label" for="termsCheck">
+                      He leído y acepto los
+                      <a href="#" class="text-primary"
+                        >términos y condiciones</a
+                      >
+                      y la
+                      <a href="#" class="text-primary"
+                        >política de privacidad</a
+                      >
+                      <span class="text-danger">*</span>
+                    </label>
+                    <div class="invalid-feedback">
+                      Debes aceptar los términos y condiciones.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Resumen del Pedido -->
+          <div class="col-lg-5">
+            <div class="card border-0 shadow-sm sticky-top" style="top: 100px">
+              <div class="card-body">
+                <h5 class="card-title fw-bold mb-4">Resumen del Pedido</h5>
+
+                <!-- Productos -->
+                <div class="mb-3" id="order-items">
+                  <!-- Los productos se cargarán aquí dinámicamente -->
+                </div>
+
+                <hr />
+
+                <!-- Totales -->
+                <div class="d-flex justify-content-between mb-2">
+                  <span
+                    >Subtotal (<span id="total-items">0</span> productos)</span
+                  >
+                  <span id="subtotal">$0</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Envío</span>
+                  <span id="shipping" class="text-success fw-semibold"
+                    >Gratis</span
+                  >
+                </div>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <span>IVA (19%)</span>
+                  <span id="tax">$0</span>
+                </div>
+
+                <hr />
+
+                <div class="d-flex justify-content-between mb-4">
+                  <strong class="fs-5">Total</strong>
+                  <strong class="text-primary fs-4" id="total">$0</strong>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-grid gap-2">
+                  <button
+                    type="submit"
+                    form="checkout-form"
+                    class="btn btn-primary btn-lg"
+                    id="place-order-btn"
+                  >
+                    <i class="bi bi-check-circle me-2"></i>
+                    Confirmar Pedido
+                  </button>
+                  <a href="cart.html" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>
+                    Volver al Carrito
+                  </a>
+                </div>
+
+                <!-- Seguridad -->
+                <div class="mt-4 pt-3 border-top">
+                  <div
+                    class="d-flex align-items-center justify-content-center text-muted small"
+                  >
+                    <i class="bi bi-shield-check me-2 fs-5"></i>
+                    <span>Compra 100% segura y protegida</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-light py-4 mt-5">
+      <div class="container">
+        <p class="text-center mb-0">
+          &copy; 2025 Wizard World. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal de Confirmación -->
+    <div
+      class="modal fade"
+      id="confirmationModal"
+      tabindex="-1"
+      aria-labelledby="confirmationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="confirmationModalLabel">
+              <i class="bi bi-check-circle me-2"></i>¡Pedido Confirmado!
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center py-4">
+            <i
+              class="bi bi-check-circle-fill text-success"
+              style="font-size: 4rem"
+            ></i>
+            <h4 class="mt-3">¡Gracias por tu compra!</h4>
+            <p class="text-muted">Tu pedido ha sido procesado exitosamente.</p>
+            <div class="alert alert-light">
+              <strong>Número de Orden:</strong> <span id="orderNumber"></span>
+            </div>
+            <p class="small text-muted">
+              Recibirás un email de confirmación con los detalles de tu pedido.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="../index.html" class="btn btn-primary">Volver al Inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/checkout.js"></script>
+  </body>
+</html>
