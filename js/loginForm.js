@@ -124,7 +124,7 @@ function verificarSesionActiva() {
 export function cerrarSesion() {
   sessionStorage.removeItem("sesionActiva");
   localStorage.removeItem("ultimaSesion");
-  window.location.href = "../pages/singIn.html";
+  window.location.href = "../pages/signIn.html";
 }
 
 // Función para obtener usuario de la sesión activa

@@ -176,7 +176,7 @@ function cambiarPassword() {
 
     // Redirigir después de 2 segundos
     setTimeout(() => {
-      window.location.href = "singIn.html";
+      window.location.href = "signIn.html";
     }, 2000);
   } else {
     mostrarMensajeError("Error al cambiar la contraseña. Intenta nuevamente.");

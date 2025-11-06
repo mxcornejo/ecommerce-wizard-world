@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (validarFormulario()) {
       const usuarioCreado = guardarUsuario();
-      
+
       // Iniciar sesión automáticamente
       iniciarSesionAutomatica(usuarioCreado);
-      
+
       mostrarMensajeExito("¡Registro exitoso! Bienvenido a Wizard World 🥳");
 
       // Redirigir al inicio después de 1.5 segundos
@@ -80,7 +80,7 @@ function guardarUsuario() {
 
   // Guardar en localStorage
   localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
-  
+
   // Retornar el usuario creado para iniciar sesión
   return usuario;
 }
@@ -105,7 +105,7 @@ function mostrarValidacionPasswordEnTiempoReal(password) {
   const validacion = validarPasswordCompleta(password);
 
   // Aquí puedes agregar código para actualizar indicadores visuales si existen
-  // Por ejemplo, cambiar colores de checkmarks como en recuperarPassword.html
+  // Por ejemplo, cambiar colores de checkmarks como en recoverPassword.html
 }
 
 function validarCampoVacio(idCampo) {
