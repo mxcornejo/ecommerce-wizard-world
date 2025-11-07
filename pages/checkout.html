@@ -90,11 +90,9 @@
             >
               <i class="bi bi-cart3"></i>
               <span
-                id="cart-badge"
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                style="display: none"
               >
-                0
+                4
               </span>
             </a>
             <a href="signIn.html" class="btn btn-primary ms-2"
@@ -483,50 +481,84 @@
                 <h5 class="card-title fw-bold mb-4">Resumen del Pedido</h5>
 
                 <!-- Productos -->
-                <div class="mb-3" id="order-items">
-                  <!-- Los productos se cargarán aquí dinámicamente -->
+                <div class="mb-3">
+                  <!-- Producto 1 -->
+                  <div class="d-flex mb-3">
+                    <img
+                      src="../assets/juegos/catan.jpg"
+                      alt="Catan"
+                      class="img-thumbnail me-3"
+                      style="width: 60px; height: 60px; object-fit: cover"
+                    />
+                    <div class="flex-grow-1">
+                      <h6 class="mb-0">Catan</h6>
+                      <small class="text-muted">Cantidad: 1</small>
+                      <div class="fw-bold">$34.990</div>
+                    </div>
+                  </div>
+
+                  <!-- Producto 2 -->
+                  <div class="d-flex mb-3">
+                    <img
+                      src="../assets/juegos/azul.jpg"
+                      alt="Azul"
+                      class="img-thumbnail me-3"
+                      style="width: 60px; height: 60px; object-fit: cover"
+                    />
+                    <div class="flex-grow-1">
+                      <h6 class="mb-0">Azul</h6>
+                      <small class="text-muted">Cantidad: 2</small>
+                      <div class="fw-bold">$65.980</div>
+                    </div>
+                  </div>
+
+                  <!-- Producto 3 -->
+                  <div class="d-flex mb-3">
+                    <img
+                      src="../assets/juegos/dixit.jpg"
+                      alt="Dixit"
+                      class="img-thumbnail me-3"
+                      style="width: 60px; height: 60px; object-fit: cover"
+                    />
+                    <div class="flex-grow-1">
+                      <h6 class="mb-0">Dixit</h6>
+                      <small class="text-muted">Cantidad: 1</small>
+                      <div class="fw-bold">$28.990</div>
+                    </div>
+                  </div>
                 </div>
 
                 <hr />
 
                 <!-- Totales -->
                 <div class="d-flex justify-content-between mb-2">
-                  <span
-                    >Subtotal (<span id="total-items">0</span> productos)</span
-                  >
-                  <span id="subtotal">$0</span>
+                  <span>Subtotal (4 productos)</span>
+                  <span>$129.960</span>
                 </div>
 
                 <div class="d-flex justify-content-between mb-2">
                   <span>Envío</span>
-                  <span id="shipping" class="text-success fw-semibold"
-                    >Gratis</span
-                  >
+                  <span class="text-success fw-semibold">Gratis</span>
                 </div>
 
                 <div class="d-flex justify-content-between mb-2">
                   <span>IVA (19%)</span>
-                  <span id="tax">$0</span>
+                  <span>$24.692</span>
                 </div>
 
                 <hr />
 
                 <div class="d-flex justify-content-between mb-4">
                   <strong class="fs-5">Total</strong>
-                  <strong class="text-primary fs-4" id="total">$0</strong>
+                  <strong class="text-primary fs-4">$154.652</strong>
                 </div>
 
                 <!-- Botones -->
                 <div class="d-grid gap-2">
-                  <button
-                    type="submit"
-                    form="checkout-form"
-                    class="btn btn-primary btn-lg"
-                    id="place-order-btn"
-                  >
+                  <a href="confirmation.html" class="btn btn-primary btn-lg">
                     <i class="bi bi-check-circle me-2"></i>
                     Confirmar Pedido
-                  </button>
+                  </a>
                   <a href="cart.html" class="btn btn-outline-secondary">
                     <i class="bi bi-arrow-left me-2"></i>
                     Volver al Carrito
@@ -557,54 +589,10 @@
       </div>
     </footer>
 
-    <!-- Modal de Confirmación -->
-    <div
-      class="modal fade"
-      id="confirmationModal"
-      tabindex="-1"
-      aria-labelledby="confirmationModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header bg-success text-white">
-            <h5 class="modal-title" id="confirmationModalLabel">
-              <i class="bi bi-check-circle me-2"></i>¡Pedido Confirmado!
-            </h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body text-center py-4">
-            <i
-              class="bi bi-check-circle-fill text-success"
-              style="font-size: 4rem"
-            ></i>
-            <h4 class="mt-3">¡Gracias por tu compra!</h4>
-            <p class="text-muted">Tu pedido ha sido procesado exitosamente.</p>
-            <div class="alert alert-light">
-              <strong>Número de Orden:</strong> <span id="orderNumber"></span>
-            </div>
-            <p class="small text-muted">
-              Recibirás un email de confirmación con los detalles de tu pedido.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <a href="../index.html" class="btn btn-primary">Volver al Inicio</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/products.js"></script>
-    <script src="../js/checkout.js"></script>
   </body>
 </html>

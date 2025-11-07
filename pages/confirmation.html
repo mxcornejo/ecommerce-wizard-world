@@ -171,7 +171,7 @@
                   <h5 class="alert-heading mb-2">
                     <i class="bi bi-receipt me-2"></i>Número de Orden
                   </h5>
-                  <h3 class="mb-0" id="orderNumber">-</h3>
+                  <h3 class="mb-0">#WW-2025-001234</h3>
                 </div>
 
                 <!-- Información del pedido -->
@@ -185,15 +185,15 @@
                         </h6>
                         <p class="mb-1 small">
                           <strong>Nombre:</strong>
-                          <span id="customerName">-</span>
+                          Juan Pérez González
                         </p>
                         <p class="mb-1 small">
                           <strong>Email:</strong>
-                          <span id="customerEmail">-</span>
+                          juan.perez@ejemplo.com
                         </p>
                         <p class="mb-0 small">
                           <strong>Teléfono:</strong>
-                          <span id="customerPhone">-</span>
+                          +56 9 1234 5678
                         </p>
                       </div>
                     </div>
@@ -205,8 +205,10 @@
                           <i class="bi bi-geo-alt me-2 text-primary"></i>
                           Dirección de Envío
                         </h6>
-                        <p class="mb-1 small" id="shippingAddress">-</p>
-                        <p class="mb-0 small" id="shippingCity">-</p>
+                        <p class="mb-1 small">
+                          Av. Libertador Bernardo O'Higgins 1234
+                        </p>
+                        <p class="mb-0 small">Santiago, Región Metropolitana</p>
                       </div>
                     </div>
                   </div>
@@ -219,17 +221,72 @@
                       <i class="bi bi-box-seam me-2 text-primary"></i>
                       Resumen del Pedido
                     </h6>
-                    <div id="orderSummary" class="mb-3">
-                      <!-- Los productos se cargarán aquí -->
+                    <div class="mb-3">
+                      <!-- Producto 1 -->
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-2"
+                      >
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="../assets/juegos/catan.jpg"
+                            alt="Catan"
+                            class="img-thumbnail me-2"
+                            style="width: 50px; height: 50px; object-fit: cover"
+                          />
+                          <div>
+                            <div class="fw-semibold">Catan</div>
+                            <small class="text-muted">Cantidad: 1</small>
+                          </div>
+                        </div>
+                        <span>$34.990</span>
+                      </div>
+
+                      <!-- Producto 2 -->
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-2"
+                      >
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="../assets/juegos/azul.jpg"
+                            alt="Azul"
+                            class="img-thumbnail me-2"
+                            style="width: 50px; height: 50px; object-fit: cover"
+                          />
+                          <div>
+                            <div class="fw-semibold">Azul</div>
+                            <small class="text-muted">Cantidad: 2</small>
+                          </div>
+                        </div>
+                        <span>$65.980</span>
+                      </div>
+
+                      <!-- Producto 3 -->
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-2"
+                      >
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="../assets/juegos/dixit.jpg"
+                            alt="Dixit"
+                            class="img-thumbnail me-2"
+                            style="width: 50px; height: 50px; object-fit: cover"
+                          />
+                          <div>
+                            <div class="fw-semibold">Dixit</div>
+                            <small class="text-muted">Cantidad: 1</small>
+                          </div>
+                        </div>
+                        <span>$28.990</span>
+                      </div>
                     </div>
                     <hr />
                     <div class="d-flex justify-content-between mb-2">
                       <span>Subtotal:</span>
-                      <span id="summarySubtotal">$0</span>
+                      <span>$129.960</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                       <span>IVA (19%):</span>
-                      <span id="summaryTax">$0</span>
+                      <span>$24.692</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                       <span>Envío:</span>
@@ -238,9 +295,7 @@
                     <hr />
                     <div class="d-flex justify-content-between">
                       <strong class="fs-5">Total:</strong>
-                      <strong class="text-primary fs-4" id="summaryTotal"
-                        >$0</strong
-                      >
+                      <strong class="text-primary fs-4">$154.652</strong>
                     </div>
                   </div>
                 </div>
@@ -270,12 +325,8 @@
                         class="bi bi-calendar-check fs-3 text-primary mb-2"
                       ></i>
                       <p class="mb-0 small fw-bold">Entrega Estimada</p>
-                      <p
-                        class="mb-0 text-muted"
-                        style="font-size: 0.8rem"
-                        id="estimatedDelivery"
-                      >
-                        -
+                      <p class="mb-0 text-muted" style="font-size: 0.8rem">
+                        3-5 días hábiles
                       </p>
                     </div>
                   </div>
@@ -324,7 +375,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/products.js"></script>
-    <script src="../js/confirmation.js"></script>
   </body>
 </html>

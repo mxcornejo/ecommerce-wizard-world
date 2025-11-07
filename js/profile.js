@@ -1,12 +1,14 @@
-// Perfil de usuario
+import { soloClientes } from "./authGuard.js";
 
 let usuarioActual = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Verificar si hay sesión activa
+  if (!soloClientes()) {
+    return;
+  }
+
   verificarSesion();
 
-  // Botón cerrar sesión
   const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", cerrarSesion);

@@ -1,5 +1,3 @@
-// Formulario de edición de perfil
-
 import {
   esEmailValido,
   esMayorDe13,
@@ -16,10 +14,15 @@ import {
   mostrarMensajeError,
 } from "./formHelpers.js";
 
+import { soloClientes } from "./authGuard.js";
+
 let usuarioActual = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Verificar si hay sesión activa
+  if (!soloClientes()) {
+    return;
+  }
+
   verificarSesion();
 
   const formulario = document.getElementById("formulario-editar-perfil");

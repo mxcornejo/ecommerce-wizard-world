@@ -13,7 +13,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("formulario-login");
 
-  // Verificar si ya hay una sesión activa
+  inicializarAdmin();
   verificarSesionActiva();
 
   formulario.addEventListener("submit", function (e) {
@@ -51,11 +51,9 @@ function iniciarSesion() {
   const password = obtenerCampo("password").value;
   const recordarme = obtenerCampo("recordarme").checked;
 
-  // Obtener usuarios registrados desde localStorage
   const usuariosRegistrados =
     JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  // Buscar usuario por email o nombre de usuario
   const usuarioEncontrado = usuariosRegistrados.find(
     (user) =>
       (user.email === emailUsuario || user.usuario === emailUsuario) &&
@@ -63,7 +61,6 @@ function iniciarSesion() {
   );
 
   if (usuarioEncontrado) {
-    // Crear objeto de sesión
     const sesionUsuario = {
       id: usuarioEncontrado.id || Date.now(),
       nombre: usuarioEncontrado.nombre,
@@ -71,12 +68,11 @@ function iniciarSesion() {
       email: usuarioEncontrado.email,
       fechaLogin: new Date().toISOString(),
       recordarme: recordarme,
+      rol: "cliente",
     };
 
-    // Guardar sesión en sessionStorage
     sessionStorage.setItem("sesionActiva", JSON.stringify(sesionUsuario));
 
-    // Si marcó "recordarme", también guardar en localStorage
     if (recordarme) {
       localStorage.setItem("ultimaSesion", JSON.stringify(sesionUsuario));
     }
@@ -85,7 +81,6 @@ function iniciarSesion() {
       `¡Bienvenido de vuelta, ${usuarioEncontrado.nombre}! 🎮`
     );
 
-    // Redirigir a la página principal después de 1 segundo
     setTimeout(() => {
       window.location.href = "../index.html";
     }, 1000);
@@ -94,7 +89,6 @@ function iniciarSesion() {
       "Usuario o contraseña incorrectos. Por favor, intenta de nuevo."
     );
 
-    // Marcar campos como inválidos
     marcarComoInvalido(obtenerCampo("emailUsuario"));
     marcarComoInvalido(obtenerCampo("password"));
   }
@@ -127,8 +121,22 @@ export function cerrarSesion() {
   window.location.href = "../pages/signIn.html";
 }
 
-// Función para obtener usuario de la sesión activa
 export function obtenerUsuarioSesion() {
   const sesionActiva = sessionStorage.getItem("sesionActiva");
   return sesionActiva ? JSON.parse(sesionActiva) : null;
+}
+
+function inicializarAdmin() {
+  const adminExiste = localStorage.getItem("adminUsuario");
+
+  if (!adminExiste) {
+    const admin = {
+      usuario: "admin",
+      password: "1234",
+      rol: "admin",
+      fechaCreacion: new Date().toISOString(),
+    };
+
+    localStorage.setItem("adminUsuario", JSON.stringify(admin));
+  }
 }
