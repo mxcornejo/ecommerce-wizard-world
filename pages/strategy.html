@@ -95,9 +95,8 @@
               <span
                 id="cart-badge"
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                style="display: none"
               >
-                0
+                3
               </span>
             </a>
             <a href="signIn.html" class="btn btn-primary ms-2"
@@ -243,16 +242,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const badge = document.getElementById("cart-badge");
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        if (totalItems > 0) {
-          badge.textContent = totalItems;
-          badge.style.display = "inline-block";
-        }
-      });
-    </script>
   </body>
 </html>
