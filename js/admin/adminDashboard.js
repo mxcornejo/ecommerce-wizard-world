@@ -4,9 +4,9 @@ import {
   obtenerCampo,
   mostrarMensajeExito,
   mostrarMensajeError,
-} from "./formHelpers.js";
+} from "../shared/formHelpers.js";
 
-import { noEstaVacio, esEmailValido } from "./validators.js";
+import { noEstaVacio, esEmailValido } from "../shared/validators.js";
 
 let clientes = [];
 let clienteSeleccionadoId = null;

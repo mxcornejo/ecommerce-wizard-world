@@ -1,4 +1,4 @@
-import { soloClientes } from "./authGuard.js";
+import { soloClientes } from "../auth/authGuard.js";
 
 let usuarioActual = null;
 
@@ -171,6 +171,6 @@ function cerrarSesion() {
     alert("Sesión cerrada exitosamente");
 
     // Redirigir a la página de inicio
-    window.location.href = "../index.html";
+    window.location.href = "../../index.html";
   }
 }

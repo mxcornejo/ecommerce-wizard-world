@@ -4,7 +4,7 @@ import {
   noEstaVacio,
   sonIguales,
   validarPasswordCompleta,
-} from "./validators.js";
+} from "../shared/validators.js";
 
 import {
   marcarComoValido,
@@ -12,9 +12,9 @@ import {
   obtenerCampo,
   mostrarMensajeExito,
   mostrarMensajeError,
-} from "./formHelpers.js";
+} from "../shared/formHelpers.js";
 
-import { soloClientes } from "./authGuard.js";
+import { soloClientes } from "../auth/authGuard.js";
 
 let usuarioActual = null;
 
@@ -292,7 +292,7 @@ function cerrarSesion() {
     mostrarMensajeExito("Sesión cerrada correctamente. ¡Hasta pronto! 👋");
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
     }, 1000);
   }
 }

@@ -5,7 +5,7 @@ import {
   noEstaVacio,
   sonIguales,
   validarPasswordCompleta,
-} from "./validators.js";
+} from "../shared/validators.js";
 
 import {
   marcarComoValido,
@@ -13,7 +13,7 @@ import {
   obtenerCampo,
   mostrarMensajeExito,
   mostrarMensajeError,
-} from "./formHelpers.js";
+} from "../shared/formHelpers.js";
 
 let codigoGenerado = null;
 let emailRecuperacion = null;

@@ -1,4 +1,4 @@
-import { noEstaVacio } from "./validators.js";
+import { noEstaVacio } from "../shared/validators.js";
 
 import {
   marcarComoValido,
@@ -6,7 +6,7 @@ import {
   obtenerCampo,
   mostrarMensajeExito,
   mostrarMensajeError,
-} from "./formHelpers.js";
+} from "../shared/formHelpers.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("formulario-admin-login");

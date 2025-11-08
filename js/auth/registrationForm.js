@@ -7,7 +7,7 @@ import {
   noEstaVacio,
   sonIguales,
   validarPasswordCompleta,
-} from "./validators.js";
+} from "../shared/validators.js";
 
 import {
   marcarComoValido,
@@ -15,7 +15,7 @@ import {
   obtenerCampo,
   resetearFormulario,
   mostrarMensajeExito,
-} from "./formHelpers.js";
+} from "../shared/formHelpers.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const formulario = document.getElementById("formulario-inscripcion");

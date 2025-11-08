@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Juegos de Cartas - Tienda de Juegos de Mesa</title>
+    <title>Juegos de Rol - Tienda de Juegos de Mesa</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -11,17 +11,20 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico" />
   </head>
   <body class="pt-5">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="../../index.html">
             <img
-              src="../assets/icons/witch-hat.png"
+              src="../../assets/icons/witch-hat.png"
               alt=""
               width="30"
               height="24"
@@ -42,7 +45,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="../index.html">Inicio</a>
+                <a class="nav-link" href="../../index.html">Inicio</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -57,22 +60,16 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="strategy.html"
-                      >Estrategia</a
-                    >
+                    <a class="dropdown-item" href="strategy.html">Estrategia</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="family.html"
-                      >Familiares</a
-                    >
+                    <a class="dropdown-item" href="family.html">Familiares</a>
                   </li>
                   <li>
-                    <a class="dropdown-item active" href="cards.html"
-                      >Cartas</a
-                    >
+                    <a class="dropdown-item" href="cards.html">Cartas</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="roleplay.html">Rol</a>
+                    <a class="dropdown-item active" href="roleplay.html">Rol</a>
                   </li>
                 </ul>
               </li>
@@ -88,9 +85,15 @@
                 Buscar
               </button>
             </form>
-            <a href="cart.html" class="btn btn-outline-primary ms-2 position-relative">
+            <a
+              href="../cart/cart.html"
+              class="btn btn-outline-primary ms-2 position-relative"
+            >
               <i class="bi bi-cart3"></i>
-              <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span
+                id="cart-badge"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              >
                 3
               </span>
             </a>
@@ -105,8 +108,10 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-8 mx-auto text-center">
-              <h1 class="display-3 fw-bold mb-4">Juegos de Cartas</h1>
-              <p class="lead fs-4 mb-4">Emoción y estrategia en cada mano</p>
+              <h1 class="display-3 fw-bold mb-4">Juegos de Rol</h1>
+              <p class="lead fs-4 mb-4">
+                Vive aventuras épicas y crea tu propia historia
+              </p>
             </div>
           </div>
         </div>
@@ -117,57 +122,31 @@
           class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center g-4 pb-4"
         >
           <article class="col">
-            <a href="product.html?id=uno" class="text-decoration-none">
-              <div
-                class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
-              >
-                <img
-                  src="../assets/juegos/uno.jpg"
-                  class="card-img-top"
-                  alt="UNO"
-                  style="height: 300px; object-fit: cover"
-                />
-                <div class="card-body">
-                  <h5 class="card-title fw-semibold text-dark">UNO</h5>
-                  <p class="card-text text-muted">
-                    El clásico juego de cartas que todos conocen y aman. ¡No olvides gritar UNO!
-                  </p>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <span class="h5 text-primary mb-0">$9.990</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <article class="col">
-            <a href="product.html?id=explodingkittens" class="text-decoration-none">
+            <a href="product.html?id=dungeons" class="text-decoration-none">
               <div
                 class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
               >
                 <div class="position-relative">
                   <img
-                    src="../assets/juegos/ExplodingKittens.jpg"
+                    src="../../assets/juegos/Dungeons.jpg"
                     class="card-img-top"
-                    alt="Exploding Kittens"
+                    alt="Dungeons & Dragons"
                     style="height: 300px; object-fit: cover"
                   />
                   <span
                     class="position-absolute top-0 end-0 badge bg-danger m-2"
                   >
-                    -11%
+                    -12%
                   </span>
                 </div>
                 <div class="card-body">
                   <h5 class="card-title fw-semibold text-dark">
-                    Exploding Kittens
+                    Dungeons & Dragons - Kit de Inicio
                   </h5>
                   <p class="card-text text-muted">
-                    Ruleta rusa con gatos explosivos. Estrategia, suerte y humor absurdo en cada partida.
+                    El juego de rol más famoso del mundo. Crea tu héroe, explora
+                    mazmorras y vive aventuras inolvidables. Incluye todo lo
+                    necesario para empezar.
                   </p>
                   <div
                     class="d-flex justify-content-between align-items-center"
@@ -176,9 +155,9 @@
                       <span
                         class="text-decoration-line-through text-muted me-2"
                       >
-                        $27.990
+                        $45.990
                       </span>
-                      <span class="h5 text-primary mb-0">$24.990</span>
+                      <span class="h5 text-primary mb-0">$40.470</span>
                     </div>
                   </div>
                 </div>
@@ -187,28 +166,74 @@
           </article>
 
           <article class="col">
-            <a href="product.html?id=sushigo" class="text-decoration-none">
+            <a href="product.html?id=pathfinder" class="text-decoration-none">
               <div
                 class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
               >
                 <img
-                  src="../assets/juegos/SushiGo.jpg"
+                  src="../../assets/juegos/Pathfinder.jpg"
                   class="card-img-top"
-                  alt="Sushi Go!"
+                  alt="Pathfinder"
                   style="height: 300px; object-fit: cover"
                 />
                 <div class="card-body">
-                  <h5 class="card-title fw-semibold text-dark">Sushi Go!</h5>
+                  <h5 class="card-title fw-semibold text-dark">
+                    Pathfinder - Caja Básica
+                  </h5>
                   <p class="card-text text-muted">
-                    Selecciona las mejores piezas de sushi en este rápido juego de draft de cartas.
+                    Sistema de rol de fantasía épica con reglas profundas y
+                    opciones infinitas. Perfecto para jugadores experimentados
+                    que buscan complejidad estratégica.
                   </p>
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
                     <div>
-                      <span class="h5 text-primary mb-0">$16.990</span>
+                      <span class="h5 text-primary mb-0">$52.990</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="col">
+            <a href="product.html?id=tales" class="text-decoration-none">
+              <div
+                class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden"
+              >
+                <div class="position-relative">
+                  <img
+                    src="../../assets/juegos/Tales.jpg"
+                    class="card-img-top"
+                    alt="Tales from the Loop"
+                    style="height: 300px; object-fit: cover"
+                  />
+                  <span
+                    class="position-absolute top-0 end-0 badge bg-danger m-2"
+                  >
+                    -18%
+                  </span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title fw-semibold text-dark">
+                    Tales from the Loop
+                  </h5>
+                  <p class="card-text text-muted">
+                    Juego de rol ambientado en los años 80 alternos donde
+                    interpretas niños resolviendo misterios tecnológicos.
+                    Narrativa emotiva y nostálgica.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <span
+                        class="text-decoration-line-through text-muted me-2"
+                      >
+                        $48.990
                       </span>
-                      <span class="h5 text-primary mb-0">$9.490</span>
+                      <span class="h5 text-primary mb-0">$40.170</span>
                     </div>
                   </div>
                 </div>
@@ -233,6 +258,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/navbar.js"></script>
+    <script src="../../js/shared/navbar.js"></script>
   </body>
 </html>
