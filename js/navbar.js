@@ -65,6 +65,11 @@ function cerrarSesionNavbar() {
   if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
     sessionStorage.removeItem("sesionActiva");
     alert("Sesión cerrada exitosamente");
-    window.location.href = "index.html";
+
+    // Detectar si estamos en la carpeta pages o en la raíz
+    const isInPagesFolder = window.location.pathname.includes("/pages/");
+    const indexPath = isInPagesFolder ? "../index.html" : "index.html";
+
+    window.location.href = indexPath;
   }
 }
