@@ -149,327 +149,56 @@
         </div>
 
         <div class="row">
-          <!-- Formulario de Pago -->
+          <!-- Información de Pago -->
           <div class="col-lg-7 mb-4">
-            <form id="checkout-form" novalidate>
-              <!-- Información de Envío -->
-              <div class="card border-0 shadow-sm mb-4">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-4">
-                    <i class="bi bi-geo-alt me-2"></i>Información de Envío
-                  </h5>
-
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="firstName" class="form-label"
-                        >Nombre <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="firstName"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa tu nombre.
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="lastName" class="form-label"
-                        >Apellido <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="lastName"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa tu apellido.
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <label for="email" class="form-label"
-                        >Email <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="correo@ejemplo.com"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa un email válido.
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <label for="phone" class="form-label"
-                        >Teléfono <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        placeholder="+56 9 1234 5678"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa tu teléfono.
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <label for="address" class="form-label"
-                        >Dirección <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="address"
-                        placeholder="Calle Principal 123"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa tu dirección.
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="city" class="form-label"
-                        >Ciudad <span class="text-danger">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="city"
-                        required
-                      />
-                      <div class="invalid-feedback">
-                        Por favor ingresa tu ciudad.
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="region" class="form-label"
-                        >Región <span class="text-danger">*</span></label
-                      >
-                      <select class="form-select" id="region" required>
-                        <option value="">Seleccionar...</option>
-                        <option value="RM">Región Metropolitana</option>
-                        <option value="V">Valparaíso</option>
-                        <option value="VIII">Biobío</option>
-                        <option value="X">Los Lagos</option>
-                        <option value="Otras">Otra región</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Por favor selecciona tu región.
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="postalCode" class="form-label"
-                        >Código Postal</label
-                      >
-                      <input type="text" class="form-control" id="postalCode" />
-                    </div>
-                  </div>
+            <!-- Información de Envío -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title fw-bold mb-3">
+                  <i class="bi bi-geo-alt me-2"></i>Información de Envío
+                </h5>
+                <div class="alert alert-info mb-0">
+                  <i class="bi bi-info-circle me-2"></i>
+                  <small
+                    >Se agregará en alguna implementación según pasarela de pago
+                    a usar</small
+                  >
                 </div>
               </div>
+            </div>
 
-              <!-- Método de Pago -->
-              <div class="card border-0 shadow-sm mb-4">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-4">
-                    <i class="bi bi-wallet2 me-2"></i>Método de Pago
-                  </h5>
-
-                  <div class="row g-3 mb-4">
-                    <div class="col-12">
-                      <div
-                        class="btn-group w-100"
-                        role="group"
-                        aria-label="Método de pago"
-                      >
-                        <input
-                          type="radio"
-                          class="btn-check"
-                          name="paymentMethod"
-                          id="creditCard"
-                          value="credit"
-                          checked
-                        />
-                        <label class="btn btn-outline-primary" for="creditCard">
-                          <i class="bi bi-credit-card-2-front me-2"></i>Tarjeta
-                          de Crédito/Débito
-                        </label>
-
-                        <input
-                          type="radio"
-                          class="btn-check"
-                          name="paymentMethod"
-                          id="paypal"
-                          value="paypal"
-                        />
-                        <label class="btn btn-outline-primary" for="paypal">
-                          <i class="bi bi-paypal me-2"></i>PayPal
-                        </label>
-
-                        <input
-                          type="radio"
-                          class="btn-check"
-                          name="paymentMethod"
-                          id="transfer"
-                          value="transfer"
-                        />
-                        <label class="btn btn-outline-primary" for="transfer">
-                          <i class="bi bi-bank me-2"></i>Transferencia
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Tarjeta de Crédito/Débito -->
-                  <div id="card-payment-section">
-                    <div class="row g-3">
-                      <div class="col-12">
-                        <label for="cardNumber" class="form-label"
-                          >Número de Tarjeta
-                          <span class="text-danger">*</span></label
-                        >
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="cardNumber"
-                            placeholder="1234 5678 9012 3456"
-                            maxlength="19"
-                            required
-                          />
-                          <span class="input-group-text">
-                            <i class="bi bi-credit-card"></i>
-                          </span>
-                        </div>
-                        <div class="invalid-feedback">
-                          Por favor ingresa un número de tarjeta válido.
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <label for="cardName" class="form-label"
-                          >Nombre en la Tarjeta
-                          <span class="text-danger">*</span></label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cardName"
-                          placeholder="NOMBRE APELLIDO"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Por favor ingresa el nombre como aparece en la
-                          tarjeta.
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="expiryDate" class="form-label"
-                          >Fecha de Expiración
-                          <span class="text-danger">*</span></label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="expiryDate"
-                          placeholder="MM/AA"
-                          maxlength="5"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Por favor ingresa la fecha de expiración.
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="cvv" class="form-label"
-                          >CVV <span class="text-danger">*</span></label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cvv"
-                          placeholder="123"
-                          maxlength="4"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Por favor ingresa el código CVV.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- PayPal -->
-                  <div id="paypal-payment-section" style="display: none">
-                    <div class="alert alert-info">
-                      <i class="bi bi-info-circle me-2"></i>
-                      Serás redirigido a PayPal para completar tu pago de forma
-                      segura.
-                    </div>
-                  </div>
-
-                  <!-- Transferencia Bancaria -->
-                  <div id="transfer-payment-section" style="display: none">
-                    <div class="alert alert-info">
-                      <i class="bi bi-info-circle me-2"></i>
-                      <strong>Datos para transferencia:</strong><br />
-                      Banco: Banco Estado<br />
-                      Cuenta Corriente: 123456789<br />
-                      RUT: 12.345.678-9<br />
-                      Email: pagos@wizardworld.cl
-                    </div>
-                  </div>
+            <!-- Método de Pago -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title fw-bold mb-3">
+                  <i class="bi bi-wallet2 me-2"></i>Método de Pago
+                </h5>
+                <div class="alert alert-info mb-0">
+                  <i class="bi bi-info-circle me-2"></i>
+                  <small
+                    >Se agregará en alguna implementación según pasarela de pago
+                    a usar</small
+                  >
                 </div>
               </div>
+            </div>
 
-              <!-- Notas del Pedido -->
-              <div class="card border-0 shadow-sm mb-4">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-3">
-                    <i class="bi bi-chat-left-text me-2"></i>Notas del Pedido
-                    (Opcional)
-                  </h5>
-                  <textarea
-                    class="form-control"
-                    id="orderNotes"
-                    rows="3"
-                    placeholder="Instrucciones especiales de entrega, comentarios, etc."
-                  ></textarea>
+            <!-- Notas del Pedido -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title fw-bold mb-3">
+                  <i class="bi bi-chat-left-text me-2"></i>Notas del Pedido
+                  (Opcional)
+                </h5>
+                <div class="alert alert-info mb-0">
+                  <i class="bi bi-info-circle me-2"></i>
+                  <small
+                    >Se agregará en alguna implementación según pasarela de pago
+                    a usar</small
+                  >
                 </div>
               </div>
-
-              <!-- Términos y Condiciones -->
-              <div class="card border-0 shadow-sm mb-4">
-                <div class="card-body">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="termsCheck"
-                      required
-                    />
-                    <label class="form-check-label" for="termsCheck">
-                      He leído y acepto los
-                      <a href="#" class="text-primary"
-                        >términos y condiciones</a
-                      >
-                      y la
-                      <a href="#" class="text-primary"
-                        >política de privacidad</a
-                      >
-                      <span class="text-danger">*</span>
-                    </label>
-                    <div class="invalid-feedback">
-                      Debes aceptar los términos y condiciones.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
+            </div>
           </div>
 
           <!-- Resumen del Pedido -->
