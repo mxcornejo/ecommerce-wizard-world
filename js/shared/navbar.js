@@ -39,7 +39,7 @@ function mostrarMenuUsuario(usuario) {
     : "pages/user/editProfile.html";
 
   userMenu.innerHTML = `
-    <div class="dropdown ms-3">
+    <div class="dropdown">
       <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person-circle me-1"></i>${nombreMostrar}
       </button>
@@ -82,8 +82,8 @@ function mostrarBotonesAcceso() {
     : "pages/auth/signUp.html";
 
   userMenu.innerHTML = `
-    <div class="ms-3">
-      <a href="${signInPath}" class="btn btn-outline-primary me-2">
+    <div>
+      <a href="${signInPath}" class="btn btn-outline-primary">
         <i class="bi bi-box-arrow-in-right me-1"></i>Iniciar Sesión
       </a>
       <a href="${signUpPath}" class="btn btn-primary">

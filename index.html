@@ -90,30 +90,32 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                Buscar
-              </button>
-            </form>
-            <a
-              href="./pages/cart/cart.html"
-              class="btn btn-outline-primary ms-2 position-relative"
-            >
-              <i class="bi bi-cart3"></i>
-              <span
-                id="cart-badge"
-                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            <div class="navbar-actions">
+              <form class="d-flex search-form">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Buscar"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-primary" type="submit">
+                  Buscar
+                </button>
+              </form>
+              <a
+                href="./pages/cart/cart.html"
+                class="btn btn-outline-primary position-relative"
               >
-                3
-              </span>
-            </a>
-            <div id="user-menu"></div>
+                <i class="bi bi-cart3"></i>
+                <span
+                  id="cart-badge"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >
+                  3
+                </span>
+              </a>
+              <div id="user-menu"></div>
+            </div>
           </div>
         </div>
       </nav>
