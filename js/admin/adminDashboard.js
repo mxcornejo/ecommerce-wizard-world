@@ -42,7 +42,7 @@ function verificarAccesoAdmin() {
   const sesionActiva = sessionStorage.getItem("sesionActiva");
 
   if (!sesionActiva) {
-    window.location.href = "adminLogin.html";
+    window.location.href = "../auth/adminLogin.html";
     return;
   }
 
@@ -314,6 +314,6 @@ function cerrarSesion() {
   if (confirmar) {
     sessionStorage.removeItem("sesionActiva");
     localStorage.removeItem("ultimaSesion");
-    window.location.href = "adminLogin.html";
+    window.location.href = "../auth/adminLogin.html";
   }
 }

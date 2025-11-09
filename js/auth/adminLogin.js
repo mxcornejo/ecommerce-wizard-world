@@ -66,7 +66,7 @@ function iniciarSesionAdmin() {
     mostrarMensajeExito("¡Acceso concedido! Bienvenido, Administrador 🔐");
 
     setTimeout(() => {
-      window.location.href = "adminDashboard.html";
+      window.location.href = "../admin/adminDashboard.html";
     }, 1000);
   } else {
     mostrarMensajeError("Credenciales incorrectas. Acceso denegado.");
@@ -83,7 +83,7 @@ function verificarSesionAdminActiva() {
     const sesion = JSON.parse(sesionActiva);
 
     if (sesion.rol === "admin") {
-      window.location.href = "adminDashboard.html";
+      window.location.href = "../admin/adminDashboard.html";
     }
   }
 }

@@ -21,7 +21,7 @@ export function requiereAutenticacion(tipoAcceso = "cliente") {
       alert(
         "Debes iniciar sesión como administrador para acceder a esta página."
       );
-      window.location.href = "adminLogin.html";
+      window.location.href = "../auth/adminLogin.html";
     } else {
       alert("Debes iniciar sesión para acceder a esta página.");
       window.location.href = "signIn.html";
@@ -39,7 +39,7 @@ export function soloAdmin() {
     alert(
       "Debes iniciar sesión como administrador para acceder a esta página."
     );
-    window.location.href = "adminLogin.html";
+    window.location.href = "../auth/adminLogin.html";
     return false;
   }
 
@@ -63,7 +63,7 @@ export function soloClientes() {
 
   if (sesion.rol === "admin") {
     alert("Los administradores no pueden acceder a esta sección de clientes.");
-    window.location.href = "adminDashboard.html";
+    window.location.href = "../admin/adminDashboard.html";
     return false;
   }
 
@@ -77,7 +77,7 @@ export function cerrarSesion() {
   localStorage.removeItem("ultimaSesion");
 
   if (sesion && sesion.rol === "admin") {
-    window.location.href = "adminLogin.html";
+    window.location.href = "../auth/adminLogin.html";
   } else {
     window.location.href = "signIn.html";
   }
@@ -88,7 +88,7 @@ export function prevenirnAccesoConSesion(tipoPagina = "cliente") {
 
   if (sesion) {
     if (tipoPagina === "admin" && sesion.rol === "admin") {
-      window.location.href = "adminDashboard.html";
+      window.location.href = "../admin/adminDashboard.html";
       return false;
     } else if (tipoPagina === "cliente" && sesion.rol === "cliente") {
       window.location.href = "../../index.html";
