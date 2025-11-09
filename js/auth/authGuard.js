@@ -45,7 +45,7 @@ export function soloAdmin() {
 
   if (sesion.rol !== "admin") {
     alert("Acceso denegado. Esta página es solo para administradores.");
-    window.location.href = "../index.html";
+    window.location.href = "../../index.html";
     return false;
   }
 
@@ -91,7 +91,7 @@ export function prevenirnAccesoConSesion(tipoPagina = "cliente") {
       window.location.href = "adminDashboard.html";
       return false;
     } else if (tipoPagina === "cliente" && sesion.rol === "cliente") {
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
       return false;
     }
   }

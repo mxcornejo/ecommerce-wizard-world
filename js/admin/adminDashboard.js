@@ -50,7 +50,7 @@ function verificarAccesoAdmin() {
 
   if (sesion.rol !== "admin") {
     alert("Acceso denegado. No tienes permisos de administrador.");
-    window.location.href = "../index.html";
+    window.location.href = "../../index.html";
   }
 }
 

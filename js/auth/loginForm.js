@@ -82,7 +82,7 @@ function iniciarSesion() {
     );
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
     }, 1000);
   } else {
     mostrarMensajeError(
@@ -106,7 +106,7 @@ function verificarSesionActiva() {
     );
 
     if (continuar) {
-      window.location.href = "../index.html";
+      window.location.href = "../../index.html";
     } else {
       // Cerrar sesión actual
       sessionStorage.removeItem("sesionActiva");
@@ -118,7 +118,7 @@ function verificarSesionActiva() {
 export function cerrarSesion() {
   sessionStorage.removeItem("sesionActiva");
   localStorage.removeItem("ultimaSesion");
-  window.location.href = "../pages/signIn.html";
+  window.location.href = "../../pages/auth/signIn.html";
 }
 
 export function obtenerUsuarioSesion() {
